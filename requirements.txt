@@ -18,7 +18,7 @@ decorator==5.1.1
 EasyProcess==1.1
 emoji==2.5.1
 exceptiongroup==1.1.1
-Flask==2.3.2
+Flask==2.2.5
 future==0.18.3
 geocoder==1.38.1
 googleapis-common-protos==1.59.1
