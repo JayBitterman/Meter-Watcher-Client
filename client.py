@@ -35,8 +35,10 @@ def home():
                 server_msg = client_socket.recv(1024).decode()
                 if not server_msg:
                     break
-                elif server_msg == 'Meter Maid in your area! Run!':
+                elif server_msg == 'close':
                     return redirect('warning')
+                elif server_msg == 'very close':
+                    return redirect('danger')
             except Exception as msg:
                 print(msg)
                 # Close upon error
@@ -49,6 +51,11 @@ def home():
 def warning():
     return render_template('warning.html')
 
+
+@app.route('/danger')
+def danger():
+    return render_template('danger.html')
+    
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=False)
